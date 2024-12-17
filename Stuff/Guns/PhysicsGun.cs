@@ -3,6 +3,7 @@
 namespace DzhakesWeaponry;
 
 [EditorGroup("DzhakesWEP|Guns")]
+[BaggedProperty("isFatal", false)]
 public class PhysicsGun : Gun
 {
     public PhysicsGun(float x, float y) : base(x, y)
@@ -10,11 +11,12 @@ public class PhysicsGun : Gun
         ammo = 9;
         _ammoType = new ATPhysics();
         _type = "gun";
-        _graphic = new Sprite("sniper");
-        _center = new Vec2(16f, 4f);
+        _graphic = new Sprite(GetPath("Weapons/PhysicsGun"));
+        _center = new Vec2(16f, 16f);
         _collisionOffset = new Vec2(-8f, -4f);
-        _collisionSize = new Vec2(16f, 8f);
-        _barrelOffsetTL = new Vec2(30f, 3f);
+        _collisionSize = new Vec2(14f, 9f);
+        _barrelOffsetTL = new Vec2(24f, 14f);
+        _holdOffset = new Vec2(7f, 3f);
         _fireSound = "pistolFire";
         _kickForce = 3f;
         _fireRumble = RumbleIntensity.Kick;
